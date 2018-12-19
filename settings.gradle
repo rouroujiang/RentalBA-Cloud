@@ -1,0 +1,11 @@
+rootProject.name = 'RentalBA-Cloud'
+include 'register'
+include 'clients'
+include 'model'
+include 'intelligence'
+
+project(':register').name = 'cloud-register'
+project(':clients').name = 'cloud-clients'
+project(':model').name = 'cloud-model'
+project(':intelligence').name = 'cloud-intelligence'
+

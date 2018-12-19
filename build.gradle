@@ -1,0 +1,93 @@
+group 'com.hpe.microservice'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+description '赶脚云服务平台'
+
+sourceCompatibility = 1.8
+
+buildscript {
+    ext {
+        //定义一个变量，统一规定springboot的版本
+        springBootVersion = '1.5.+'
+    }
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        //Spring repo
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+        maven { url "http://repo.spring.io/release" }
+        maven { url 'http://repo.spring.io/plugins-snapshot' }
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {//用来打包
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+//设定当前所有的项目的配置
+allprojects {
+    group 'com.hpe.microservice'
+    version '1.0-SNAPSHOT'
+
+    ext {
+        springCloudVersion = 'Edgware.+'
+    }
+
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        //Spring repo
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+        maven { url "http://repo.spring.io/release" }
+        maven { url 'http://repo.spring.io/plugins-snapshot' }
+        jcenter()
+        mavenCentral()
+    }
+
+    compileJava {
+        options.encoding = "utf-8"
+        options.compilerArgs << "-Xlint:unchecked"
+    }
+
+    compileTestJava {
+        options.encoding = "utf-8"
+        options.compilerArgs << "-Xlint:unchecked"
+    }
+
+    test {
+        testLogging {
+            events "passed", "skipped", "failed"
+            showStandardStreams = true
+        }
+    }
+}
+//设定当前模块项目中的配置
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'spring-boot'
+
+    configurations {
+        compile.exclude module: 'spring-boot-starter-tomcat'
+    }
+
+    dependencies {
+        //使用springboot-web组件，但是排除tomcat组件
+        compile 'org.springframework.boot:spring-boot-starter-web'
+        //使用undertow作为应用服务,作为servlet容器
+        compile 'org.springframework.boot:spring-boot-starter-undertow'
+        //使用健康检查组件
+        compile 'org.springframework.boot:spring-boot-starter-actuator'
+        testCompile 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    dependencyManagement {
+        imports {
+            //加上此配置后，如果需要引用springcloud的组件，就不需要再提供版本信息
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+}
