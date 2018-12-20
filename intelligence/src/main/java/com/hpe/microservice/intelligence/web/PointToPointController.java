@@ -23,7 +23,7 @@ public class PointToPointController {
 
     private Logger logger = LoggerFactory.getLogger(PointToPointController.class);
 
-    @RequestMapping(value = "/dispatch", method = RequestMethod.POST)
+    @RequestMapping(value = "/dispatch", method = RequestMethod.GET)
     public String dispatch(@RequestBody @Valid PointToPointDispatchVo pointToPointDispatchVo) {
         logger.info("一键智能调度服务实现");
         return "一键调度成功！";

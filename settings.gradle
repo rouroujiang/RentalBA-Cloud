@@ -8,4 +8,5 @@ project(':register').name = 'cloud-register'
 project(':clients').name = 'cloud-clients'
 project(':model').name = 'cloud-model'
 project(':intelligence').name = 'cloud-intelligence'
+include 'feign-service'
 
