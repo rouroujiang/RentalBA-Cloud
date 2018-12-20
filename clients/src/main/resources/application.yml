@@ -2,19 +2,15 @@ server:
   port: 36542
 #  undertow:
 
-info:
-  build:
-    artifact: "@project.artifactId@"
-    name: "@project.name@"
-    description: "@project.description@"
-    version: "@project.version@"
-    environment: ${spring.profiles.active}
+#logger
+logging:
+  config: classpath:log4j2-spring.xml
 
 spring:
   profiles:
     active: dev
   application:
-    name: ${rentalba.clients.name}
+    name: cloud-client
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     locale: zh_CN
@@ -29,8 +25,9 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
+    hostname: ${spring.application.name}
   client:
     service-url:
-      defaultZone: http://cloud-register:36541/eureka/
+      defaultZone: http://localhost:36541/eureka/
 
 feign.hystrix.enabled: true

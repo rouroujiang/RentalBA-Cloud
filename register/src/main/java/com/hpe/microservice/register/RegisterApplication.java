@@ -1,4 +1,4 @@
-package com.hpe.microservice;
+package com.hpe.microservice.register;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

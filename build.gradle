@@ -64,6 +64,7 @@ allprojects {
         }
     }
 }
+
 //设定当前模块项目中的配置
 subprojects {
     apply plugin: 'java'
@@ -71,16 +72,21 @@ subprojects {
     apply plugin: 'spring-boot'
 
     configurations {
-        compile.exclude module: 'spring-boot-starter-tomcat'
+        all*.exclude module: 'spring-boot-starter-logging'
+        all*.exclude module: 'logback-classic'
+        all*.exclude module: 'log4j-over-slf4j'
     }
 
     dependencies {
         //使用springboot-web组件，但是排除tomcat组件
-        compile 'org.springframework.boot:spring-boot-starter-web'
+        compile ('org.springframework.boot:spring-boot-starter-web') {
+            exclude module: 'spring-boot-starter-tomcat'
+        }
         //使用undertow作为应用服务,作为servlet容器
         compile 'org.springframework.boot:spring-boot-starter-undertow'
         //使用健康检查组件
         compile 'org.springframework.boot:spring-boot-starter-actuator'
+        compile 'org.springframework.boot:spring-boot-starter-log4j2'
         testCompile 'org.springframework.boot:spring-boot-starter-test'
     }
 

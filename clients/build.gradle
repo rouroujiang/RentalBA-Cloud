@@ -3,6 +3,7 @@ description '赶脚云服务平台-Feign客户端'
 
 dependencies {
     compile project(':cloud-model')
+    compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
     compile('org.springframework.cloud:spring-cloud-starter-feign')
     compile('org.springframework.cloud:spring-cloud-starter-hystrix')
 }

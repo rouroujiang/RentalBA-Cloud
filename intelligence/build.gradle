@@ -3,5 +3,6 @@ description '赶脚云服务平台-自动化'
 
 dependencies {
     compile project(':cloud-model')
-    compile project(':cloud-clients')
+    // 客户端
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka-server'
 }

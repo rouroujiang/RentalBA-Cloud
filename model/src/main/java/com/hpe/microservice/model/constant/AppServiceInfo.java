@@ -9,6 +9,6 @@ package com.hpe.microservice.model.constant;
 public interface AppServiceInfo {
 
     String SERVICE_NAME_INTELLIGENCE = "cloud-intelligence";
-    String SERVICE_API_INTELLIGENCE = "/api/cloud/intelligence/";
+    String SERVICE_API_INTELLIGENCE = "/api/cloud/intelligence";
 
 }

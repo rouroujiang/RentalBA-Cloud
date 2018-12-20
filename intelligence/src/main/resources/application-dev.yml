@@ -1,6 +1,5 @@
 server:
-  port: 36542
-#  undertow:
+  port: 36543
 
 #logger
 logging:
@@ -10,7 +9,7 @@ spring:
   profiles:
     active: dev
   application:
-    name: cloud-client
+    name: cloud-intelligence
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     locale: zh_CN
@@ -30,4 +29,3 @@ eureka:
     service-url:
       defaultZone: http://localhost:36541/eureka/
 
-feign.hystrix.enabled: true

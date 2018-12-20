@@ -10,6 +10,10 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
+    hostname: localhost
+#    hostname: ${spring.application.name}
   client:
     register-with-eureka: false #表示不注册，做集群是设置成true
     fetch-registry: false #表示不拉取，做集群是设置成true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

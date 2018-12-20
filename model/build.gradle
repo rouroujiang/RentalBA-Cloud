@@ -1,2 +1,7 @@
 
 description '赶脚云服务平台-数据模型'
+
+dependencies {
+    compile 'io.springfox:springfox-swagger2:2.7.+'
+    compile 'io.springfox:springfox-swagger-ui:2.7.+'
+}

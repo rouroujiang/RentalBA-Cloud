@@ -1,6 +1,6 @@
 package com.hpe.microservice.clients.hystrix;
 
-import com.hpe.microservice.clients.api.PointToPointClient;
+import com.hpe.microservice.clients.client.PointToPointClient;
 import com.hpe.microservice.model.vo.PointToPointDispatchVo;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Component;
 public class PointToPointHystrix implements PointToPointClient {
     @Override
     public String dispatch(PointToPointDispatchVo dispatchVo) {
-        return null;
+        return "调度失败";
     }
 }
