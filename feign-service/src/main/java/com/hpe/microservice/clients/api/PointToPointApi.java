@@ -1,4 +1,4 @@
-package com.hpe.microservice.clients;
+package com.hpe.microservice.clients.api;
 
 import com.hpe.microservice.model.vo.PointToPointDispatchVo;
 import io.swagger.annotations.Api;
