@@ -2,14 +2,11 @@ package com.hpe.microservice.clients.client;
 
 import com.hpe.microservice.clients.hystrix.PointToPointHystrix;
 import com.hpe.microservice.model.constant.AppServiceInfo;
-import com.hpe.microservice.model.vo.PointToPointDispatchVo;
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.validation.Valid;
 
 /**
  * 点到点服务client

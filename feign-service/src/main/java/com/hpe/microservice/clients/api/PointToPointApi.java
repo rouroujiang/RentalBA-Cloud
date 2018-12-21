@@ -1,13 +1,10 @@
 package com.hpe.microservice.clients.api;
 
-import com.hpe.microservice.model.vo.PointToPointDispatchVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.validation.Valid;
 
 /**
  * @date 2018/12/19 14:38
