@@ -3,7 +3,6 @@ package com.hpe.microservice.model.constant;
 
 /**
  * 业务服务组件信息
- * @author song xiaolong
  * @date 2018/12/18 17:24
  */
 public interface AppServiceInfo {

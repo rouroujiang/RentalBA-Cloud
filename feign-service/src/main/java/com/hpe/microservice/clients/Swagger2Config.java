@@ -12,7 +12,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * swagger2的配置文件，在项目的启动类的同级文件建立
- * @author song xiaolong
  * @date 2018/12/19 16:23
  */
 @Configuration

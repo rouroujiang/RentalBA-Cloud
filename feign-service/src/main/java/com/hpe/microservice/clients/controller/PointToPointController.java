@@ -6,15 +6,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 /**
- * @author song xiaolong
  * @date 2018/12/19 14:39
  */
 @Validated
@@ -28,9 +24,9 @@ public class PointToPointController {
     PointToPointClient pointToPointClient;
 
     @GetMapping(value = "/dispatch")
-    public String dispatch(@RequestBody @Valid PointToPointDispatchVo pointToPointDispatchVo) {
+    public String dispatch(@RequestParam(value = "decs", required = true) String decs) {
         logger.info("一键智能调度api");
-        return pointToPointClient.dispatch(pointToPointDispatchVo);
+        return pointToPointClient.dispatch(decs);
     }
 
 }

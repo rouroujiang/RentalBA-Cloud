@@ -6,7 +6,6 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * 注册中心
- * @author song xiaolong
  * @date 2018/12/18 13:09
  */
 @EnableEurekaServer
