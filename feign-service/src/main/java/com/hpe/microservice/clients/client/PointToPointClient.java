@@ -20,4 +20,7 @@ public interface PointToPointClient {
     @RequestMapping(value = POINTTOPOINT_API + "/dispatch", method = RequestMethod.GET)
     String dispatch(@RequestParam(value = "decs", required = true) String decs);
 
+    @RequestMapping(value = POINTTOPOINT_API + "/dispatchPost", method = RequestMethod.POST)
+    String dispatchPost(@RequestParam(value = "decs", required = true) String decs);
+
 }

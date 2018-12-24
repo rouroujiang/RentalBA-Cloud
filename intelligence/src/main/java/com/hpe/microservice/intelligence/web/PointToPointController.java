@@ -1,5 +1,7 @@
 package com.hpe.microservice.intelligence.web;
 
+import com.hpe.microservice.clients.api.PointToPointApi;
+import com.hpe.microservice.model.vo.Staff;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.annotation.Validated;
@@ -19,6 +21,14 @@ public class PointToPointController {
 
     @RequestMapping(value = "/dispatch", method = RequestMethod.GET)
     public String dispatch(@RequestParam(value = "decs", required = true) String decs) {
+        logger.info("一键智能调度服务实现");
+        return "一键调度成功！";
+    }
+
+
+
+    @RequestMapping(value = "/queryStore", method = RequestMethod.POST)
+    public String queryStore(@RequestBody Staff staffValidate) {
         logger.info("一键智能调度服务实现");
         return "一键调度成功！";
     }
