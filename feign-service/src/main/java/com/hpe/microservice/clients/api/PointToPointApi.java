@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * @date 2018/12/19 14:38
  */
-@Api(value = "智能调度 Client Restful API ", description = "智能调度 Client ", protocols = "application/json")
+@Api(value = "智能调度 Client Restful API ", description = "智能调度 Client ")
 public interface PointToPointApi {
 
     @ApiOperation(value = "智能调度 Client Restful API ", notes = "一键智能完成车辆调度")
-    @ApiImplicitParam(name = "decs", value = "decs", paramType = "String", dataType = "String", required = true)
+    @ApiImplicitParam(name = "decs", value = "描述", paramType = "query", dataType = "String", required = true)
     String dispatch(@RequestParam(value = "decs", required = true) String decs);
 
     @ApiOperation(value = "智能调度", notes = "一键智能完成车辆调度")
-    @ApiImplicitParam(name = "staff", value = "staff", paramType = "Staff", dataType = "Staff", required = true)
+    @ApiImplicitParam(name = "staff", value = "staff", paramType = "body", dataType = "Staff", required = true)
     String queryStore(@RequestBody Staff staff);
 
 }

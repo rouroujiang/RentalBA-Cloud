@@ -1,12 +1,11 @@
 rootProject.name = 'RentalBA-Cloud'
 include 'register'
-include 'clients'
+include 'feign-service'
 include 'model'
 include 'intelligence'
 
 project(':register').name = 'cloud-register'
-project(':clients').name = 'cloud-clients'
+project(':feign-service').name = 'cloud-feign-service'
 project(':model').name = 'cloud-model'
 project(':intelligence').name = 'cloud-intelligence'
-include 'feign-service'
 
