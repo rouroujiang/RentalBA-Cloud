@@ -25,7 +25,7 @@ public class PointToPointController {
     }
 
     @RequestMapping(value = "/dispatchPost", method = RequestMethod.POST)
-    public String queryStore(@RequestBody Staff staff) {
+    public String dispatchPost(@RequestBody Staff staff) {
         logger.info("一键智能调度服务实现");
         return "一键调度成功！";
     }
