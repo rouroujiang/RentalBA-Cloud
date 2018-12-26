@@ -15,7 +15,7 @@ public class PointToPointHystrix implements PointToPointClient {
     }
 
     @Override
-    public String dispatchPost(String decs) {
+    public String queryStore(String decs) {
         return "调度失败";
     }
 }

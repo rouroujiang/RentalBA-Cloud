@@ -1,6 +1,5 @@
 package com.hpe.microservice.intelligence.web;
 
-import com.hpe.microservice.clients.api.PointToPointApi;
 import com.hpe.microservice.model.vo.Staff;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

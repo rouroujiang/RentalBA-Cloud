@@ -19,7 +19,7 @@ public interface PointToPointApi {
     String dispatch(@RequestParam(value = "decs", required = true) String decs);
 
     @ApiOperation(value = "智能调度", notes = "一键智能完成车辆调度")
-    @ApiImplicitParam(name = "staff", value = "staff", paramType = "body", dataType = "Staff", required = true)
+    @ApiImplicitParam(name = "staff", value = "staff", paramType = "body", dataType = "Staff", required = false)
     String queryStore(@RequestBody Staff staff);
 
 }

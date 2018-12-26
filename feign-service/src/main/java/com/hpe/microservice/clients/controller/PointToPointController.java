@@ -34,7 +34,7 @@ public class PointToPointController implements PointToPointApi {
     @RequestMapping(value = "/queryStore", method = RequestMethod.POST)
     public String queryStore(@RequestBody Staff staff){
         logger.info("一键智能调度post");
-        return pointToPointClient.dispatch("一键只能调度Post");
+        return pointToPointClient.queryStore("一键只能调度Post");
     }
 
 }
