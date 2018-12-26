@@ -24,12 +24,11 @@ public class PointToPointController {
         return "一键调度成功！";
     }
 
-
-
-    @RequestMapping(value = "/queryStore", method = RequestMethod.POST)
-    public String queryStore(@RequestBody Staff staffValidate) {
+    @RequestMapping(value = "/dispatchPost", method = RequestMethod.POST)
+    public String queryStore(@RequestBody Staff staff) {
         logger.info("一键智能调度服务实现");
         return "一键调度成功！";
     }
+
 
 }
